@@ -184,6 +184,8 @@
 		</dict>
 		<key>Theme</key>
 		<string>OSS</string>
+		<key>ScreenResolution</key>
+		<string>1920x1080</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
