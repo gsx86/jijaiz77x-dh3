@@ -1,14 +1,17 @@
-# Clover Bootloader
-* Boot loader with GUI
+# Mac OS on GA-Z77X-D3H
+> credits to https://github.com/al3xtjames/Gigabyte-GA-Z77X-macOS-Install
+
+## Clover Bootloader
+* Bootloader with GUI
 * fast boot
 
 
-# Working
+## Working
 * Ethernet
 * Wifi (with TP-LINK TL-WDN4800)
-* Boot loader HD GUI
+* Boot loader GUI
+* Audio
 
 
 # Known bugs
-* No Audio Output (stopped working for unknown reasons)
-* No Internal Bluetooth support
+* Ugly bootloader GUI

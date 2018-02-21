@@ -8,67 +8,11 @@
 		<dict>
 			<key>Fixes</key>
 			<dict>
-				<key>AddIMEI_80000</key>
-				<true/>
-				<key>AddMCHC_0008</key>
-				<true/>
-				<key>AddPNLF_1000000</key>
-				<true/>
-				<key>FixShutdown_0004</key>
-				<true/>
-				<key>NewWay_80000000</key>
+				<key>FixRegions_10000000</key>
 				<true/>
 			</dict>
 			<key>Patches</key>
 			<array>
-				<dict>
-					<key>Comment</key>
-					<string>Rename COPR to MATH</string>
-					<key>Find</key>
-					<data>
-					Q09QUg==
-					</data>
-					<key>Replace</key>
-					<data>
-					TUFUSA==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename GFX0 to IGPU</string>
-					<key>Find</key>
-					<data>
-					R0ZYMA==
-					</data>
-					<key>Replace</key>
-					<data>
-					SUdQVQ==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Rename PEGP to GFX0</string>
-					<key>Find</key>
-					<data>
-					UEVHUA==
-					</data>
-					<key>Replace</key>
-					<data>
-					R0ZYMA==
-					</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change GFX0._ADR to Zero</string>
-					<key>Find</key>
-					<data>
-					X0FEUgv//w==
-					</data>
-					<key>Replace</key>
-					<data>
-					X0FEUgA=
-					</data>
-				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Rename SAT0 to SATA</string>
@@ -83,14 +27,14 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Rename XHC to XHC1</string>
+					<string>Rename SPTn to PRTn</string>
 					<key>Find</key>
 					<data>
-					WEhDXw==
+					U1BU
 					</data>
 					<key>Replace</key>
 					<data>
-					WEhDMQ==
+					UFJU
 					</data>
 				</dict>
 			</array>
@@ -100,6 +44,10 @@
 			<dict>
 				<key>Signature</key>
 				<string>DMAR</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>MATS</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -116,38 +64,26 @@
 		</array>
 		<key>SSDT</key>
 		<dict>
-			<key>DropOem</key>
-			<false/>
 			<key>Generate</key>
-			<dict>
-				<key>CStates</key>
-				<true/>
-				<key>PStates</key>
-				<true/>
-			</dict>
+			<true/>
+			<key>PluginType</key>
+			<integer>1</integer>
 		</dict>
-		<key>SortedOrder</key>
-		<array>
-			<string>SSDT-CFG.aml</string>
-			<string>SSDT-PEG.aml</string>
-			<string>SSDT-IGPU.aml</string>
-			<string>SSDT-HDA.aml</string>
-			<string>SSDT-USB.aml</string>
-			<string>SSDT-PR.aml</string>
-		</array>
 	</dict>
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>darkwake=10</string>
+		<string></string>
 		<key>IgnoreNVRAMBoot</key>
 		<false/>
 		<key>Legacy</key>
 		<string>LegacyBiosDefault</string>
+		<key>NoEarlyProgress</key>
+		<true/>
+		<key>StrictHibernate</key>
+		<true/>
 		<key>Timeout</key>
-		<integer>1</integer>
-		<key>DefaultVolume</key>
-		<string>Macintosh SSD</string>
+		<integer>5</integer>
 		<key>XMPDetection</key>
 		<true/>
 	</dict>
@@ -168,11 +104,6 @@
 	<dict>
 		<key>Language</key>
 		<string>en:0</string>
-		<key>Mouse</key>
-		<dict>
-			<key>Enabled</key>
-			<true/>
-		</dict>
 		<key>Scan</key>
 		<dict>
 			<key>Entries</key>
@@ -184,8 +115,6 @@
 		</dict>
 		<key>Theme</key>
 		<string>OSS</string>
-		<key>ScreenResolution</key>
-		<string>1920x1080</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -194,13 +123,96 @@
 			<key>ATI</key>
 			<false/>
 			<key>Intel</key>
-			<false/>
+			<true/>
 			<key>NVidia</key>
 			<false/>
 		</dict>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
+		<key>KernelToPatch</key>
+		<array>
+			<dict>
+				<key>Comment</key>
+				<string>Enable Ivy Bridge XCPM (credit: Pike R. Alpha)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				g8PEg/si
+				</data>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Replace</key>
+				<data>
+				g8PGg/si
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable Ivy Bridge XCPM (credit: Pike R. Alpha &amp; Sherlocks)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				jUPEg/gi
+				</data>
+				<key>MatchOS</key>
+				<string>10.12.6</string>
+				<key>Replace</key>
+				<data>
+				jUPGg/gi
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable Ivy Bridge XCPM (credit: Pike R. Alpha &amp; PMheart)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				idgExDwidyI=
+				</data>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Replace</key>
+				<data>
+				idgExjwidyI=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable XCPM PKG Scope MSRs (credit: Pike R. Alpha)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				vgcAAAAx0uiU/P//
+				</data>
+				<key>MatchOS</key>
+				<string>10.12.x</string>
+				<key>Replace</key>
+				<data>
+				vgcAAAAx0pCQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable XCPM PKG Scope MSRs (credit: Pike R. Alpha)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				vgcAAAAx0uiP/P//
+				</data>
+				<key>MatchOS</key>
+				<string>10.13.x</string>
+				<key>Replace</key>
+				<data>
+				vgcAAAAx0pCQkJCQ
+				</data>
+			</dict>
+		</array>
 		<key>KextsToPatch</key>
 		<array>
 			<dict>
@@ -213,7 +225,7 @@
 				aU1hYzEyLDIK
 				</data>
 				<key>Name</key>
-				<string>AirPortAtheros40</string>
+				<string>com.apple.driver.AirPort.Atheros40</string>
 				<key>Replace</key>
 				<data>
 				aU1hYzEzLDIK
@@ -221,18 +233,36 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Change DP to HDMI (Port 0406 - 0x01620005)</string>
+				<string>Change regdomain to US-FCC (1 of 2)</string>
 				<key>Disabled</key>
 				<false/>
 				<key>Find</key>
 				<data>
-				BAYAAAAEAAAHAQAA
+				g7sgCAAABnRk
 				</data>
+				<key>MatchOS</key>
+				<string>10.12.x,10.13.x</string>
 				<key>Name</key>
-				<string>AppleIntelFramebufferCapri</string>
+				<string>com.apple.driver.AirPort.Atheros40</string>
 				<key>Replace</key>
 				<data>
-				BAYAAAAIAAAGAAAA
+				g7sgCAAABus2
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Change regdomain to US-FCC (2 of 2)</string>
+				<key>Disabled</key>
+				<false/>
+				<key>Find</key>
+				<data>
+				ZseDFgkAAEMAZrhDAA==
+				</data>
+				<key>Name</key>
+				<string>com.apple.driver.AirPort.Atheros40</string>
+				<key>Replace</key>
+				<data>
+				ZseDFgkAAAAAZrgAAA==
 				</data>
 			</dict>
 			<dict>
@@ -245,9 +275,9 @@
 				bW9kZWw=
 				</data>
 				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
+				<string>10.12.x,10.13.x</string>
 				<key>Name</key>
-				<string>AppleUSBHub</string>
+				<string>com.apple.driver.usb.AppleUSBHub</string>
 				<key>Replace</key>
 				<data>
 				bW9kZXg=
@@ -263,9 +293,9 @@
 				bW9kZWw=
 				</data>
 				<key>MatchOS</key>
-				<string>10.11.x,10.12.x</string>
+				<string>10.12.x,10.13.x</string>
 				<key>Name</key>
-				<string>AppleUSBXHCIPCI</string>
+				<string>com.apple.driver.usb.AppleUSBXHCIPCI</string>
 				<key>Replace</key>
 				<data>
 				bW9kZXg=
@@ -281,46 +311,10 @@
 				QVBQTEUgU1NE
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>com.apple.iokit.IOAHCIBlockStorage</string>
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.10/10.11 Boot Graphics Fix (credit: lisai9093 &amp; cecekpawon)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>MatchOS</key>
-				<string>10.10.x,10.11.x</string>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6xc=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>10.12 Boot Graphics Fix (credit: denskop)</string>
-				<key>Disabled</key>
-				<false/>
-				<key>Find</key>
-				<data>
-				AQAAdSU=
-				</data>
-				<key>MatchOS</key>
-				<string>10.12.x</string>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAA6yU=
 				</data>
 			</dict>
 		</array>
@@ -334,14 +328,12 @@
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>PlatformFeature</key>
-		<integer>1</integer>
 		<key>ProductName</key>
 		<string>iMac13,2</string>
 		<key>SerialNumber</key>
 		<string></string>
 		<key>SmUUID</key>
-		<string>A7ACC77B-072D-42C3-B592-1CE8B0DD3505</string>
+		<string>0E6C354F-C4E5-475E-A5C4-D300B22BBB90</string>
 		<key>Trust</key>
 		<true/>
 	</dict>
