@@ -116,7 +116,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>OSS</string>
+		<string>dark</string>
 		<key>ScreenResolution</key>
 		<string>1920x1080</string>
 	</dict>
