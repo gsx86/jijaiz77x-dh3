@@ -78,8 +78,10 @@
 		<false/>
 		<key>Legacy</key>
 		<string>LegacyBiosDefault</string>
-		<key>NoEarlyProgress</key>
-		<true/>
+		<key>Timeout</key>
+		<integer>1</integer>
+		<key>DefaultVolume</key>
+		<string>Macintosh SSD</string>
 		<key>StrictHibernate</key>
 		<true/>
 		<key>Timeout</key>
@@ -115,6 +117,8 @@
 		</dict>
 		<key>Theme</key>
 		<string>OSS</string>
+		<key>ScreenResolution</key>
+		<string>1920x1080</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
