@@ -6,9 +6,9 @@
 # Working
 * Ethernet
 * Wifi (with TP-LINK TL-WDN4800)
+* Audio
+
+
+# Not Working
 * Boot loader HD GUI
-
-
-# Known bugs
-* No Audio Output (stopped working for unknown reasons)
 * No Internal Bluetooth support
